@@ -5,6 +5,8 @@ const { connectToDatabase } = require('./db');
 connectToDatabase();
 const app = express();
 
+app.use('/static', express.static('upload'))
+
 const routes = require('./routes/index');
 
 app.use(cors());
