@@ -9,7 +9,7 @@ let foodSchema = new mongoose.Schema({
     image: String,
     category:{
         type:String,
-        enum:["veg","non-veg"]
+        // enum:["veg","non-veg"]
     }
     
 }, { timestamps: true, usePushEach: true });
