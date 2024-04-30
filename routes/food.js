@@ -40,4 +40,10 @@ router.get('/food/:id', async (req, res) => {
     let food = await foodController.getOne(req.params.id);
     res.json({ data: food });
 });
+
+router.delete('/food/:id', async (req, res) => {
+    await foodController.deleteOne(req.params.id);
+    res.json({ data: {} });
+});
+
 module.exports = router;

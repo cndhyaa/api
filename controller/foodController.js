@@ -6,12 +6,16 @@ exports.getall = async () => {
 }
 
 exports.getOne = async (id) => {
-    let food = await FoodModel.find({_id: id});
+    let food = await FoodModel.find({ _id: id });
     return food;
 }
 
 exports.save = async (name, description, ingredients, price, image) => {
-    let food = new FoodModel({name, description, ingredients, price, image});
+    let food = new FoodModel({ name, description, ingredients, price, image });
     food.save();
     return food;
+}
+
+exports.deleteOne = async (id) => {
+    return await FoodModel.findByIdAndDelete(id);
 }
